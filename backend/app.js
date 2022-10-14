@@ -2,6 +2,9 @@ import express from "express";
 import mongoose from 'mongoose'
 import blogRouter from "./routes/blog-routes";
 import router from "./routes/user-routes";
+import cors from 'cors';
+
+app.use(cors());
 const app = express();
 
 app.use(express.json());
