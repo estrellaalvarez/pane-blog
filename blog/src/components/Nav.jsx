@@ -2,8 +2,12 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { AppBar, Toolbar, Typography, Button, Box, Tabs, Tab } from '@mui/material';
 import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { authActions } from "../store";
 
 const Nav = () => {
+
+    const dispatch = useDispatch;
 
     const isLoggedIn = useSelector(state=> state.isLoggedIn);
 
@@ -26,7 +30,7 @@ const Nav = () => {
                 <Button LinkComponent={Link} to="/auth"
                 sx={{margin: '1'}} color="secondary">Sign Up</Button>
                 </>}
-                { isLoggedIn && (<Button LinkComponent={Link} to="/auth"
+                { isLoggedIn && (<Button onClick={()=> dispatch(authActions.logout())} LinkComponent={Link} to="/auth"
                 sx={{margin: '1'}} color="secondary">Log Out</Button>)}
             </Box>
         </Toolbar>
