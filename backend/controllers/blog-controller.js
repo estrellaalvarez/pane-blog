@@ -81,13 +81,29 @@ export const deleteBlog = async(req, res, next) => {
 
     let blog;
     try {
-        blog = await Blog.findByIdAndRemove(id)
+        blog = await Blog.findByIdAndRemove(id).populate('user');
+        await blog.user.blogs.pull(blog);
+        await blog.user.save();
     } catch (err) {
         console.log(err);
     }
     if (!blog) {
         return res.status(400).json({message: "Could not delete"})
     } return res.status(200).json({message: "Blog Deleted"})
+};
+
+ export const getByUserId = async (req, res, next) => {
+    const userId = req.params.id;
+    let userBlogs;
+
+    try {
+        userBlogs = await User.findById(userId).populate('blogs');
+    } catch (err) {
+        return console.log(err)
+    }
+    if (!userBlogs) {
+        return res.status(404).json({message: "No Blogs"})
+    }
+    return res.status(200).json({blogs:userBlogs})
 }
-;
 
