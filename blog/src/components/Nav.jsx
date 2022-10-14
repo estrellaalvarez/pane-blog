@@ -22,6 +22,7 @@ const Nav = () => {
                 <Tabs value={value} onChange={(e, val)=>setvalue(val)}>
                     <Tab LinkComponent={Link} to="/blogs" label="All Blogs" />
                     <Tab LinkComponent={Link} to="/myblogs" label="My Blogs" />
+                    <Tab LinkComponent={Link} to="/blogs/new" label="New Blog" />
                 </Tabs>
             </Box>)}
             <Box display="flex" marginLeft="auto">
