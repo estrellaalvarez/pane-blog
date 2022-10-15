@@ -3,9 +3,14 @@ import mongoose from 'mongoose';
 import blogRouter from "./routes/blog-routes";
 import router from "./routes/user-routes";
 import cors from 'cors';
+import morgan from "morgan";
+
+const cors = require("cors")
+const morgan = require("morgan")
 
 const app = express();
 app.use(cors());
+app.use(morgan("dev")); // logging for development
 
 
 app.use(express.json());
