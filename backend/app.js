@@ -7,15 +7,20 @@ import cors from 'cors';
 const app = express();
 app.use(cors());
 
+
 app.use(express.json());
 
-app.use("/user", router);
+app.get("/", (req, res) => {
+    res.redirect('/api/users' )
+})
 
-app.use("/blog", blogRouter);
+app.use("/api/user", router);
+
+app.use("/api/blog", blogRouter);
 
 mongoose.connect(
     'mongodb+srv://admin:pane@cluster0.wvqjpni.mongodb.net/?retryWrites=true&w=majority'
     )
-    .then(()=> app.listen(5001))
+    .then(()=> app.listen(5000))
     .then(()=> console.log("Connected"))
     .catch((err)=> console.log(err));

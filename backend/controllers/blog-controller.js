@@ -104,6 +104,6 @@ export const deleteBlog = async(req, res, next) => {
     if (!userBlogs) {
         return res.status(404).json({message: "No Blogs"})
     }
-    return res.status(200).json({blogs:userBlogs})
+    return res.status(200).json({user:userBlogs})
 }
 
