@@ -1,7 +1,7 @@
 import { Button, InputLabel, TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 const BlogShow = () => {
@@ -18,7 +18,7 @@ const BlogShow = () => {
   };
   const fetchDetails = async () => {
     const res = await axios
-      .get(`http://localhost:5001/blog/${id}`)
+      .get(`http://localhost:5000/api/blog/${id}`)
       .catch((err) => console.log(err));
     const data = await res.data;
     return data;
@@ -34,11 +34,10 @@ const BlogShow = () => {
   }, [id]);
   const sendRequest = async () => {
     const res = await axios
-      .put(`http://localhost:5001/blog/update/${id}`, {
+      .put(`http://localhost:5000/api/blog/update/${id}`, {
         title: inputs.title,
         description: inputs.description,
-      })
-      .catch((err) => console.log(err));
+      }).catch((err) => console.log(err));
 
     const data = await res.data;
     return data;

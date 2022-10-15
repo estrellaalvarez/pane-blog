@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { Box, InputLabel, TextField, Typography, Button } from '@mui/material';
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 
 const NewBlog = () => {
+
+  const navigate = useNavigate();
 
   const [inputs, setInputs] = useState({
     title: '', description: '', imageURL: ''
@@ -18,7 +21,7 @@ const NewBlog = () => {
 
   const sendRequest = async () => {
     const res = await axios
-      .post("http://localhost:5001/blog/add", {
+      .post("http://localhost:5000/api/blog/add", {
         title: inputs.title,
         description: inputs.description,
         image: inputs.imageURL,
@@ -32,8 +35,9 @@ const NewBlog = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(inputs);
-    sendRequest().then(data => console.log(data));
-  }
+    sendRequest().then(data => console.log(data))
+    .then(() => navigate("/blogs"));
+  };
 
   return (
     <div>

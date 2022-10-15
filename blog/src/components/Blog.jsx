@@ -3,6 +3,8 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import { Card, Avatar, CardContent, CardMedia, Typography, CardHeader, IconButton, Box} from '@mui/material'
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { purple } from '@mui/material/colors'
 
 const Blog = ({title, description, imageURL, userName, isUser, id}) => {
 
@@ -10,7 +12,20 @@ const Blog = ({title, description, imageURL, userName, isUser, id}) => {
 
   const handleEdit = (e) => {
     navigate(`/myblogs/${id}`)
+  };
+
+  const deleteRequest = async() => {
+    const res = await axios.delete(`http://localhost:5000/api/blog${id}`).catch(err => console.log(err));
+    const data = await res.data;
+    return data
   }
+
+  const handleDelete = () => {
+    deleteRequest()
+      .then(() => navigate("/"))
+      .then(() => navigate("/blogs"));
+  };
+
 
   console.log(title, isUser)
 
@@ -20,7 +35,7 @@ const Blog = ({title, description, imageURL, userName, isUser, id}) => {
           {isUser && (
             <Box display="flex">
               <IconButton onClick={handleEdit} sx={{marginLeft:'auto'}}><EditIcon /></IconButton>
-              <IconButton onClick={handleEdit}><DeleteOutlineIcon /></IconButton>
+              <IconButton onClick={handleDelete}><DeleteOutlineIcon /></IconButton>
             </Box>
           )}
       <CardHeader
@@ -36,11 +51,11 @@ const Blog = ({title, description, imageURL, userName, isUser, id}) => {
         component="img"
         height="194"
         image={imageURL}
-        alt="Paella dish"
+        alt={description}
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          <b> { userName } </b> {"-"} {description}
+          <b> {"Written By"} { userName } </b> {"-"} {description}
         </Typography>
       </CardContent>
     </Card>
