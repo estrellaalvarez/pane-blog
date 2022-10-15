@@ -1,7 +1,7 @@
 import React from 'react'
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-import { Card, Avatar, CardContent, CardMedia, Typography, CardHeader, IconButton, Box} from '@mui/material'
+import { Card, CardContent, CardMedia, Typography, CardHeader, IconButton, Box, Grid} from '@mui/material'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { purple } from '@mui/material/colors'
@@ -32,6 +32,13 @@ const Blog = ({title, description, imageURL, userName, isUser, id}) => {
 
   return (
     <div>
+      <Grid
+        spacing={2}
+        direction="row"
+        justify="flex-start"
+        alignItems="flex-start"
+        >
+      <Grid item xs={3}>
          <Card sx={{ width: '30%', height: '50vh', margin: 'auto', mt:5, padding: 4, borderRadius: '10px'}}>
           {isUser && (
             <Box display="flex">
@@ -40,16 +47,11 @@ const Blog = ({title, description, imageURL, userName, isUser, id}) => {
             </Box>
           )}
       <CardHeader
-        avatar={
-          <Avatar sx={{ bgcolor: 'pink' }} aria-label="recipe">
-            {userName}
-          </Avatar>
-        }
         title={title}
       />
       <CardMedia
         component="img"
-        height="194"
+        height="220"
         image={imageURL}
         alt={description}
       />
@@ -59,6 +61,8 @@ const Blog = ({title, description, imageURL, userName, isUser, id}) => {
         </Typography>
       </CardContent>
     </Card>
+    </Grid>
+    </Grid>
     </div>
   );
 }
