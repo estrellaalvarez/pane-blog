@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { AppBar, Toolbar, Typography, Button, Box, Tabs, Tab } from '@mui/material';
+import { Toolbar, Button, Box, Tabs, Tab } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { authActions } from "../store";
@@ -14,9 +14,9 @@ const Nav = () => {
     const [value, setvalue] = useState();
 
     return (
-    <AppBar sx={{background: 'gray'}} position="sticky">
+    <div className='nav-bar'>
         <Toolbar>
-            <Typography variant="h5">Pane Blog</Typography>
+            <h1>Pane Blog</h1>
            { isLoggedIn && 
            (<Box display="flex" marginLeft={'auto'} marginRight={'auto'}>
                 <Tabs value={value} onChange={(e, val)=>setvalue(val)}>
@@ -28,14 +28,12 @@ const Nav = () => {
             <Box display="flex" marginLeft="auto">
                 { !isLoggedIn && <> <Button LinkComponent={Link} to="/auth"
                 sx={{margin: '1'}} color="secondary">Login</Button>
-                <Button LinkComponent={Link} to="/auth"
-                sx={{margin: '1'}} color="secondary">Sign Up</Button>
                 </>}
                 { isLoggedIn && (<Button onClick={()=> dispatch(authActions.logout())} LinkComponent={Link} to="/auth"
                 sx={{margin: '1'}} color="secondary">Log Out</Button>)}
             </Box>
         </Toolbar>
-    </AppBar>
+    </div>
   );
 };
 

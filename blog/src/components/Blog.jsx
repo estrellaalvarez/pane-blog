@@ -1,10 +1,9 @@
 import React from 'react'
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-import { Card, CardContent, CardMedia, Typography, CardHeader, IconButton, Box, Grid} from '@mui/material'
+import { CardContent, CardMedia, Typography, CardHeader, IconButton, Box } from '@mui/material'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { purple } from '@mui/material/colors'
 
 const Blog = ({title, description, imageURL, userName, isUser, id}) => {
 
@@ -31,15 +30,9 @@ const Blog = ({title, description, imageURL, userName, isUser, id}) => {
   console.log(title, isUser)
 
   return (
-    <div>
-      <Grid
-        spacing={2}
-        direction="row"
-        justify="flex-start"
-        alignItems="flex-start"
-        >
-      <Grid item xs={3}>
-         <Card sx={{ width: '30%', height: '50vh', margin: 'auto', mt:5, padding: 4, borderRadius: '10px'}}>
+    <div class="parent">
+    <div className='blog-card'>
+         <div>
           {isUser && (
             <Box display="flex">
               <IconButton onClick={handleEdit} sx={{marginLeft:'auto'}}><EditIcon /></IconButton>
@@ -60,9 +53,8 @@ const Blog = ({title, description, imageURL, userName, isUser, id}) => {
           <b> {"Written By"} { userName } </b> {"-"} {description}
         </Typography>
       </CardContent>
-    </Card>
-    </Grid>
-    </Grid>
+    </div>
+    </div>
     </div>
   );
 }

@@ -50,25 +50,20 @@ const Auth = () => {
 
   return (
     <div>
+      <div className='icons8'></div>
+      <div className='gif'></div>
       <form onSubmit={handleSubmit}>
-        <Box maxWidth={600} 
+        <Box className='user-auth' maxWidth={600} 
         display="flex" 
-        borderRadius={10} 
         flexDirection={'column'} 
-        boxShadow="10px 10px 20px #ccc" 
         alignItems='center' 
         justifyContent={'center'} 
-        padding={3} margin={'auto'} 
+        padding={3}
         marginTop={10}>
-          <Typography variant="h5"> {isSignup ? 'Sign Up' : 'Login'} 
-          </Typography>
-
+          <h2> {isSignup ? 'Sign Up' : 'Login'} 
+          </h2>
          { isSignup && 
-         <> <TextField name="name" 
-         onChange={handleChange} 
-         value={inputs.name} 
-         placeholder="Username" 
-         margin="normal" /> 
+         <> <TextField name="name" onChange={handleChange} value={inputs.name} placeholder="Username" margin="normal" /> 
          </>}
           <TextField name="email" onChange={handleChange} value={inputs.email} type={'email'} placeholder="user@pane.com" margin="normal"/>
           <TextField name="password" onChange={handleChange} value={inputs.password} type={'password'} placeholder="Password" margin="normal"/>

@@ -1,6 +1,71 @@
 body {
-    /* background-image: url('https://i.imgur.com/ZtVCrG1.png'); */
+    background-image: url('https://i.imgur.com/voyR2cT.png');
     background-color: lightgrey;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 400vh;
 }
+
+.blog-card{
+    width: 30%;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    /* From https://css.glass */
+    background: rgba(175, 172, 172, 0.17);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.158);
+    backdrop-filter: blur(8.8px);
+    -webkit-backdrop-filter: blur(8.8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+}
+
+.user-auth {
+    margin:auto;
+    width: 600px;
+    height: 420px;
+    background: rgba(175, 172, 172, 0.17);
+    border-radius: 30px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.158);
+    backdrop-filter: blur(8.8px);
+    -webkit-backdrop-filter: blur(8.8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.nav-bar {
+    position: sticky;
+    background-color: rgb(23, 22, 87);
+    color: rgb(238, 238, 238);
+}
+
+h1 {
+    margin-left: 50px;
+    font-size: 30px;
+}
+
+.icons8 {
+    width: 500px;
+    height: 500px;
+    background-image: url('https://i.imgur.com/JDt4wHn.png');
+    background-size: 500px;
+    position: absolute;
+    z-index: 999;
+    transform: translate(66%);
+}
+
+.gif {
+    width: 275px;
+    height: 330px;
+    background-image: url('https://i.imgur.com/mtqMn3W.gif');
+    background-size: 275px;
+    position: absolute;
+    z-index: 999;
+    transform: translate(430%, 75%);
+}
+
+h2 {
+    color: aliceblue;
+    font-size: 34px;
+}
+
