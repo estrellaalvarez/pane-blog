@@ -1,1 +1,1 @@
-# pane-blog
+# Pane Blog
