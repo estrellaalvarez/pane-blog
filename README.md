@@ -6,6 +6,7 @@ Pane Blog is an app where you can create an account and post/delete blogs with i
 - Express
 - Node
 - MongoDB
+- Postman
 - HTML/CSS
 - Icons8
 - Material UI
