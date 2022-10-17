@@ -1,7 +1,7 @@
 import React from 'react'
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-import { CardContent, CardMedia, Typography, CardHeader, IconButton, Box } from '@mui/material'
+import { CardMedia, IconButton, Box } from '@mui/material'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
@@ -39,20 +39,15 @@ const Blog = ({title, description, imageURL, userName, isUser, id}) => {
               <IconButton onClick={handleDelete}><DeleteOutlineIcon /></IconButton>
             </Box>
           )}
-      <CardHeader
-        title={title}
-      />
-      <CardMedia
+      <div className='title'> {title} </div>
+      <CardMedia className='m'
         component="img"
         height="220"
         image={imageURL}
-        alt={description}
-      />
-      <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          <b> {"Written By"} { userName } </b> {"-"} {description}
-        </Typography>
-      </CardContent>
+        alt={description}/>
+        <div className='txt'>
+          <div className='owner'> {"Posted By"} { userName } </div> <div className='desc'> {description} </div>
+        </div>
     </div>
     </div>
     </div>

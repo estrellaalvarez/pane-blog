@@ -3,7 +3,7 @@ import axios from 'axios';
 import { authActions } from "../store";
 import { useDispatch } from 'react-redux';
 import { useNavigate } from "react-router-dom";
-import { Box, Typography, TextField, Button } from '@mui/material';
+import { Box, TextField} from '@mui/material';
 
 const Auth = () => {
   const navigate = useNavigate()
@@ -67,8 +67,8 @@ const Auth = () => {
          </>}
           <TextField name="email" onChange={handleChange} value={inputs.email} type={'email'} placeholder="user@pane.com" margin="normal"/>
           <TextField name="password" onChange={handleChange} value={inputs.password} type={'password'} placeholder="Password" margin="normal"/>
-          <Button type='submit'>Submit</Button>
-          <Button onClick={()=> setisSignup(!isSignup)}> Or {isSignup ? 'Login' : 'Sign Up'} </Button>
+          <button className='btn-1' type='submit'>Submit</button>
+          <button className='btn-2' onClick={()=> setisSignup(!isSignup)}> Or {isSignup ? 'Login' : 'Sign Up'} </button>
         </Box>
       </form>
     </div>

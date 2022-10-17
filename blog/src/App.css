@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&family=PT+Serif&display=swap');
+
 body {
     background-image: url('https://i.imgur.com/voyR2cT.png');
     background-color: lightgrey;
@@ -6,13 +9,14 @@ body {
 }
 
 .blog-card{
-    width: 30%;
+    width: 45%;
     margin: 30px auto;
     display: flex;
+    color:aliceblue;
     justify-content: center;
     flex-direction: row;
     /* From https://css.glass */
-    background: rgba(175, 172, 172, 0.17);
+    background: rgba(29, 10, 65, 0.301);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.158);
     backdrop-filter: blur(8.8px);
@@ -34,14 +38,27 @@ body {
 }
 
 .nav-bar {
+    height: 80px;
     position: sticky;
-    background-color: rgb(23, 22, 87);
+    background: rgba(41, 10, 99, 0.534);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(19.4px);
+    -webkit-backdrop-filter: blur(19.4px);
+    border: 1px solid rgba(41, 10, 99, 0.21);
     color: rgb(238, 238, 238);
 }
 
-h1 {
-    margin-left: 50px;
-    font-size: 30px;
+.pane {
+    margin-left: 60px;
+    margin-top: 14px;
+    font-size: 40px;
+    text-decoration: none;
+    color: aliceblue;
+    font-family: 'Lobster', cursive;
+}
+
+.pane:hover {
+    color: white;
 }
 
 .icons8 {
@@ -51,7 +68,7 @@ h1 {
     background-size: 500px;
     position: absolute;
     z-index: 999;
-    transform: translate(66%);
+    transform: translate(59%);
 }
 
 .gif {
@@ -61,7 +78,7 @@ h1 {
     background-size: 275px;
     position: absolute;
     z-index: 999;
-    transform: translate(430%, 75%);
+    transform: translate(435%, 75%);
 }
 
 h2 {
@@ -69,3 +86,61 @@ h2 {
     font-size: 34px;
 }
 
+.btn-1 {
+    font-weight:bold;
+    margin: 20px;
+    color:aliceblue;
+    background-color: rgb(68, 43, 139);
+    font-size: 16px;
+    padding: 10px;
+    width: 17%;
+    border-radius: 20px;
+    border-color: transparent;
+}
+
+.btn-1:hover, .btn-2:hover {
+    background-color: rgb(84, 52, 173);
+}
+
+.btn-2 {
+    font-weight:bold;
+    margin: 0px;
+    color:aliceblue;
+    background-color: rgb(68, 43, 139);
+    font-size: 16px;
+    padding: 10px;
+    width: 23%;
+    border-radius: 20px;
+    border-color: transparent;
+}
+
+.txt {
+    margin: 45px;
+}
+
+.owner {
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.m {
+    border-radius: 20px;
+}
+
+.desc {
+    font-size: 19px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 28px;
+    margin: 20px;
+    font-family: 'Barlow', sans-serif;
+}
+
+.log {
+    display: flex;
+    transform: translate(2500%);
+    color: aliceblue;
+}
