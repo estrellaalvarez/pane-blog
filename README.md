@@ -7,12 +7,15 @@ Pane Blog is an app where you can create an account and post/delete blogs with i
 - Node
 - MongoDB
 - HTML/CSS
+- Icons8
 - Material UI
 
 ## Stretch Features:
+- Timestamps
 - Visit user's profiles to see all of their blogs
 - Post in anonymous mode
 - Ability to like a blog
+- Profile pictures for users
 - Edit a blog
 
 ## Pages
