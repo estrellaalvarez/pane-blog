@@ -13,6 +13,7 @@ Pane Blog is an app where you can create an account and post/delete blogs with i
 ## Stretch Features:
 - Timestamps
 - Visit user's profiles to see all of their blogs
+- Comment on blog posts
 - Post in anonymous mode
 - Ability to like a blog
 - Profile pictures for users
